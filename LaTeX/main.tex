@@ -1,0 +1,268 @@
+% ----------------------------------------------------------------------
+% Configurar a classe do documento
+% ----------------------------------------------------------------------
+\documentclass[11pt]{article}
+
+% ----------------------------------------------------------------------
+% Definir packages externos, língua, margens, tipos de letra, novos 
+% comandos e cores
+% ----------------------------------------------------------------------
+\usepackage[utf8]{inputenc} % Codificação utilizada
+\usepackage[portuguese]{babel} % Idioma de escrita
+\usepackage[normalem]{ulem}
+
+\usepackage[bottom]{footmisc}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{eurosym}
+
+\usepackage{verbatim}
+\usepackage{gensymb}
+\usepackage[export]{adjustbox} % Alinhar imagens
+\usepackage{amsmath} % Comandos extra para escrita matemática
+\usepackage{amssymb} % Símbolos matemáticos
+\usepackage{anysize} % Personalizar as margens
+    \marginsize{1.5cm}{1.5cm}{1.5cm}{1.5cm} % {esquerda}{direita}{cima}{baixo}
+\usepackage{appendix} % Apêndices
+\usepackage{cancel} % Cancelar expressões
+\usepackage{caption} % Legendas
+    \DeclareCaptionFont{newfont}{\fontfamily{cmss}\selectfont}
+    \captionsetup{labelfont={bf, newfont}}
+\usepackage{cite} % Citações, tipo [1 - 3]
+\usepackage{color} % Colorir texto
+\usepackage{fancyhdr} % Cabeçalho e rodapé
+    \pagestyle{fancy}
+    \fancyhf{}
+    \fancyhead[L]{\includegraphics[width=2cm]{Imagens/IST}} % Esquerda do cabeçalho
+    \fancyhead[R]{\footnotesize\fontfamily{cmss}\selectfont Sistemas Eletrónicos} % Direita do cabeçalho
+    \fancyfoot[L]{\footnotesize\fontfamily{cmss}\selectfont LAB 3 - $\mu$Oscilloscope} % Esquerda do rodapé
+    \fancyfoot[C]{\thepage} % Centro do rodapé
+    \fancyfoot[R]{\footnotesize\fontfamily{cmss}\selectfont LEEC} % Direita do rodapé
+    \renewcommand{\footrulewidth}{0.4pt} % Régua do rodapé
+\usepackage{float} % Utilizar o especificador [H] nas figuras
+\usepackage{graphicx} % Imagens em LaTeX
+\usepackage[colorlinks = true, plainpages = true, linkcolor = istblue, urlcolor = istblue, citecolor = istblue, anchorcolor = istblue]{hyperref}
+\usepackage{indentfirst} % Primeiro parágrafo
+\usepackage{siunitx} % Unidades SI
+\usepackage{subcaption} % Subfiguras
+\usepackage{titlesec} % Tipo de letra
+    \titleformat{\section}{\fontfamily{cmss}\selectfont\Large\bfseries}{\thesection}{1em}{}
+    \titleformat{\subsection}{\fontfamily{cmss}\selectfont\large\bfseries}{\thesubsection}{1em}{}
+    \titleformat{\subsubsection}{\fontfamily{cmss}\selectfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+    \fancyfoot[C]{\fontfamily{cmss}\selectfont\thepage}
+
+\usepackage{float}
+\usepackage{afterpage}
+\usepackage{multirow} % para mesclar células verticalmente
+\usepackage{array} % para ajustar o espaçamento das colunas
+\usepackage{makecell}
+\usepackage{float} % para definir o posicionamento da tabela
+\usepackage{acronym}
+\usepackage{xltabular}
+\usepackage{colortbl} % Adicione o pacote colortbl para cores nas células
+\usepackage{xcolor}
+\usepackage{cleveref}
+\usepackage{soul}
+
+% Novos e renovar comandos
+\newcommand{\sen}{\operatorname{\sen}} % Definição da função seno
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Definição de uma régua
+\renewcommand{\appendixpagename}{\LARGE \fontfamily{cmss}\selectfont Apêndices}
+\renewcommand{\appendixtocname}{Apêndices}
+\renewcommand{\lstlistingname}{Código}
+
+% Cores
+\definecolor{lightblue}{rgb}{0.678, 0.847, 0.902} % Definindo uma nova cor de azul claro
+\definecolor{istblue}{RGB}{3, 171, 230}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\sethlcolor{istblue} % Set highlight color to blue
+
+\usepackage{lipsum}
+
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codegreen}{rgb}{0,0.5,0}
+\definecolor{codepurple}{rgb}{0.5,0,0.5}
+\definecolor{codeblue}{rgb}{0,0,0.7}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codeblue},
+    numberstyle=\tiny\color{codepurple},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=Python % Change this line to Python
+}
+
+\lstdefinestyle{mystyle_complete_code}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codeblue},
+    numberstyle=\tiny\color{codepurple},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\tiny, % Change to \tiny for the smallest font size
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=Python % Change this line to Python
+}
+
+\lstset{style=mystyle_complete_code}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                               Documento                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% ----------------------------------------------------------------------
+% Capa
+% ----------------------------------------------------------------------
+\begin{titlepage}
+
+\begin{picture}(0,0)
+  \put(-35,5){\includegraphics[width=6cm]{Imagens/IST}}
+\end{picture}
+
+\center
+
+\large Instituto Superior Técnico\\[1 cm] 
+
+\large Licenciatura em Engenharia Eletrotécnica e de Computadores\\[2 cm] 
+\LARGE \textbf{Sistemas Eletrónicos}\\[1 cm] 
+\large 2023/2024 - Segundo Semestre (3º Período)\\[2 cm]
+\LARGE \underline{LAB 3 - $\mu$Oscilloscope}\\[1 cm]
+\LARGE {Osciloscópio através de um sistema embebido}\\[1 cm]
+\large \underline{Grupo 50}
+
+\vspace{1cm}
+
+\begin{center}
+    \begin{minipage}{0.5\textwidth}
+        \begin{flushleft}
+            \normalsize António Vasco Morais de Carvalho (102643)\\
+            \normalsize Catarina Andreia Duarte Caramalho  (102644)\\
+            \normalsize João Pedro Mendes Pinheiro (102709)
+        \end{flushleft}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \begin{flushright}
+            \href{mailto:antonio.v.morais.c@tecnico.ulisboa.pt}{\normalsize\texttt{\textcolor{istblue}{antonio.v.morais.c@tecnico.ulisboa.pt}}}\\
+            \href{mailto:catarina.caramalho@tecnico.ulisboa.pt}{\normalsize\texttt{\textcolor{istblue}{catarina.caramalho@tecnico.ulisboa.pt}}}\\
+            \href{mailto:joaoppinheiro@tecnico.ulisboa.pt}{\normalsize\texttt{\textcolor{istblue}{joaoppinheiro@tecnico.ulisboa.pt}}}
+        \end{flushright}
+    \end{minipage}
+\end{center}
+
+\vspace{1cm}
+
+Auto-avaliação: 18/20
+
+\vspace{1.5 cm}
+
+Dia da semana: Terça-feira
+
+Turno: 10:00 - 11:30
+\vspace{1.5 cm}
+
+\underline{Docente: Diogo Miguel Caetano} \\
+
+\end{titlepage}
+
+\setcounter{page}{0}
+
+% ----------------------------------------------------------------------
+%                                 Conteúdo
+% ----------------------------------------------------------------------
+\thispagestyle{empty} % Remover cabeçalho e rodapé da página do índice
+\tableofcontents 
+
+\newpage
+
+% ----------------------------------------------------------------------
+%                              Desenvolvimento
+% ----------------------------------------------------------------------
+\section{Introdução}\label{sec:Introdução}
+    \input{Texto/Introdução}
+
+\section{Programa desenvolvido}\label{sec:Programa desenvolvido}
+    \input{Texto/Programa desenvolvido/Programa desenvolvido}
+
+\section{Testes no simulador}\label{sec:Testes no simulador}
+    \input{Texto/Testes no simulador/Testes no simulador}
+
+\section{Testes no laboratório}\label{sec:Testes no laboratório}
+    \subsection{Não calibrado}\label{subsec:Não calibrado}
+        \input{Texto/Testes no laboratório/Não calibrado}
+    \subsection{Ajuste experimental}\label{subsec:Ajuste experimental}
+        \input{Texto/Testes no laboratório/Ajuste experimental}
+    \subsection{Calibrado}\label{subsec:Calibrado}
+        \input{Texto/Testes no laboratório/Calibrado}
+        
+\section{Conclusões}\label{sec:Conclusões}
+    \input{Texto/Conclusões}
+
+% ----------------------------------------------------------------------
+%                                 Bibliografia
+% ----------------------------------------------------------------------
+\newpage
+\pagestyle{fancy}
+\fancyhf{} % Limpar todos os cabeçalhos e rodapés
+\renewcommand{\headrulewidth}{0pt} % Remover linha do cabeçalho
+\renewcommand{\footrulewidth}{0pt} % Remover linha do rodapé
+% % \renewcommand{\refname}{Bibliografia} % Alterar o título da seção de referências para "Bibliografia"
+% \bibliographystyle{unsrt}
+% \bibliography{refs}
+
+% %para alterar as referências é irem ao documento refs.bib e alterar ou criar. para fazer uma referência ao longo do texto é usarem o comando \cite que está aí em cima
+
+% ----------------------------------------------------------------------
+%                                 Apêndices
+% ----------------------------------------------------------------------
+% \newpage
+\appendix  
+\addappheadtotoc 
+\appendixpage
+
+\section{Ficheiro de código desenvolvido completo}\label{ap:Ficheiro de código desenvolvido completo}
+    \input{Texto/Apêndices/Ficheiro de código desenvolvido completo}
+    
+\section{Funcionalidade do envio do email}\label{ap:Funcionalidade do envio do email}
+    \input{Texto/Apêndices/Funcionalidade do envio de email}
+
+% \newpage
+
+% ----------------------------------------------------------------------
+%                                 Anexos
+% ----------------------------------------------------------------------
+% \newpage
+% \renewcommand{\appendixpagename}{\LARGE \fontfamily{cmss}\selectfont Anexos}
+% \renewcommand{\appendixtocname}{Anexos}
+% \appendix  
+% \addappheadtotoc 
+% \appendixpage 
+
+
+% \newpage
+
+\end{document}

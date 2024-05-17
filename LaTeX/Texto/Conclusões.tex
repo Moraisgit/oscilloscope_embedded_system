@@ -1,0 +1,23 @@
+% Primeiramente deveremos indicar que todo o trabalho correu de acordo com o esperado e que a implementação do programa em \textit{python}, com as diversas funcionalidades foi executado de forma perfeita. Todas as funcionalidades pedidas, a alteração de escalas verticais e horizontais, cálculo da DFT, e envio de email, foi tudo executado, implementado e simulado sem dificuldades.
+
+% O módulo ainda foi testado com diferentes tipos de ondas, apresentando resultados promissores, uma vez que deu \textit{display} das ondas com sucesso.
+
+% Uma outra funcionalidade que podia ter sido desenvolvida seria o clássico \textit{Autoscale}, que haveria de selecionar as melhores escalas vertical e horizontal para proceder à representação de um sinal da melhor maneira possível, assim como também seria possível definir um número de períodos mínimos a representar.
+
+% Foi possível verificar que ao trocar de módulo, seria sempre necessária uma nova calibração, de forma a obter os valores intrínsecos ao mesmo, para que pudéssemos calcular e dar \textit{display}, das ondas com os melhores resultados possíveis. Uma vez que ao mostrar duas ondas iguais antes e depois da calibração, os valores sem calibração, apresentavam-se ligeiramente distantes da realidade. Para proceder à calibração, foram utilizados os programas fornecidos pelo corpo docente.
+
+% Após o desenvolvimento do código necessário, e ter sido testado em ambiente de simulação ,o mesmo foi testado em ambiente real, não demonstrando qualquer barreira ou problema que pudesse ser originado da utilização do módulo. Identificando assim o simulador como sendo um excelente instrumento de testes. Uma vez que este se aproximou bastante da realidade.
+
+% Por fim conseguimos concluir que os objetivos deste trabalho laboratorial foram realizados com sucesso e que desta forma pudemos ter uma primeira experiência da área de sistemas embebidos, que caso contrário não a teríamos.
+
+Primeiramente, há que referir a fluída execução do presente trabalho de laboratório. Em comparação com trabalhos passados, este tem menos variáveis que fogem do controlo do grupo (como é o caso dos inúmeros componentes de circuito utilizados em outros trabalhos), uma vez que o essencial deste trabalho é o desenvolvimento de \textit{software}. \newline
+
+Para cumprir os objetivos estabelecidos foi desenvolvido o programa \texttt{main.py} cujas funcionalidades pedidas foram completa e corretamente implementadas. Estas contemplam a leitura de dados do ADC e conversão para tensões, envio de um email com um conjunto de medidas e apresentação deste no \textit{display}, alteração das escalas vertical e horizontal e ainda a representação do espetro de um sinal. Estas complementando-se de forma a implementar o $\mu$Oscilloscope com recurso a um módulo IoT.
+
+Conforme já mencionado, uma funcionalidade que poderia ter sido implementada seria o \textit{Autoscale}, devido à sua enorme utilidade. Uma outra seria ainda o canal \textit{Source}, que possibilita a visualização simultânea de duas ondas. Para implementar esta última funcionalidade, seria necessário realizar duas medições consecutivas, sendo que a segunda medição seria armazenada em variáveis distintas (não efetuando o \textit{reset} do \textit{display} no momento da representação do segundo sinal).\newline
+
+Desta vez, a maior parte do trabalho foi realizado em casa dos alunos testando o programa por eles desenvolvido a partir do simulador. Este verificando-se como uma ótima ferramenta de teste para o âmbito laboratorial, uma vez que, devido à sua utilidade, não houve percalços na recolha de dados experimentais.
+
+Em ambiente laboratorial verificou-se a necessidade de calibrar os parâmetros de ajuste, confirmando as expectativas estabelecidas na \nameref{sec:Introdução}. Para tal efetuou-se um \nameref{subsec:Ajuste experimental} com o qual se obtiveram dados congruentes, mas com ligeiros desvios e presença de ruído devido a não idealidades já referidas ao longo do relatório. \newline
+
+Com isto, através deste estudo superficial de sistemas embebidos é possível afirmar que se concluíram os objetivos inicialmente estabelecidos, nomeadamente o desenvolvimento de \textit{software} para a implementação do $\mu$Oscilloscope, o teste em simulação e posterior verificação do funcionamento do programa em ambiente experimental e, intermediariamente, a calibração necessária do $\mu$Oscilloscope.
